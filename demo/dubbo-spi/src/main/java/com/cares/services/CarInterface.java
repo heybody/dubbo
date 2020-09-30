@@ -1,5 +1,7 @@
 package com.cares.services;
 
+import org.apache.dubbo.common.URL;
+import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 /**
@@ -11,4 +13,7 @@ import org.apache.dubbo.common.extension.SPI;
 @SPI
 public interface  CarInterface {
     public void open();
+
+    @Adaptive("car")
+    public void move(URL url);
 }
